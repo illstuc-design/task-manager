@@ -2,11 +2,10 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 const TABS = [
-  { id: 'today', label: '今日' },
-  { id: 'week', label: '今週' },
-  { id: 'month', label: '今月' },
   { id: 'year', label: '今年' },
-  { id: 'someday', label: 'いつか' },
+  { id: 'three', label: '3年後' },
+  { id: 'five', label: '5年後' },
+  { id: 'someday', label: 'いつかやりたいこと' },
 ]
 
 function useLocalStorage(key, initial) {
@@ -27,12 +26,11 @@ function useLocalStorage(key, initial) {
 }
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('today')
-  const [tasks, setTasks] = useLocalStorage('tasks', {
-    today: [],
-    week: [],
-    month: [],
+  const [activeTab, setActiveTab] = useState('year')
+  const [tasks, setTasks] = useLocalStorage('vision-tasks', {
     year: [],
+    three: [],
+    five: [],
     someday: [],
   })
   const [input, setInput] = useState('')
@@ -73,7 +71,7 @@ export default function App() {
   return (
     <div className="app">
       <header className="header">
-        <h1 className="header-title">タスク管理</h1>
+        <h1 className="header-title">ビジョンボード</h1>
       </header>
 
       <nav className="tabs">

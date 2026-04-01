@@ -8,9 +8,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'タスク管理',
-        short_name: 'タスク',
-        description: 'シンプルなタスク管理アプリ',
+        name: 'ビジョンボード',
+        short_name: 'ビジョン',
+        description: '長期ビジョン管理アプリ',
         theme_color: '#6366f1',
         background_color: '#ffffff',
         display: 'standalone',
